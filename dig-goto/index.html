@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>timer-button测试页面---定时器按钮组件</title>
+  <link rel="stylesheet" href="./timer-button.css">
+</head>
+<body>
+<input id='popup' type="button" value="弹出对话框">
+<hr>
+<div id="main">
+</div>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="./digGoto.js"></script>
+  <script>
+$(function(){
+  var $btnDig = $('#popup');
+    $btnDig.click(function(){ 
+      $digGoto.show({
+        num:6,
+        title:'发送验证码',
+        container:'#main'
+        });
+    }) 
+  })
+  </script>
+</body>
+</html>
