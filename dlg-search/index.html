@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>查找对话框</title>
+  <link rel="stylesheet" href="./dlg-search.css">
+</head>
+<body>
+  <div class="test">
+    <input type="button" value="弹出对话框">
+  </div>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="./dlg-search.js"></script>
+  <script>
+  $(function() {
+    var $btnTest = $('div.test>input[type="button"]');
+    $btnTest.click(function() {
+        $dlgSearch.show(function(content) {
+          console.log("search btn click!");
+          console.log(content);
+        });     
+    });
+  }); 
+  </script>
+</body>
+</html>

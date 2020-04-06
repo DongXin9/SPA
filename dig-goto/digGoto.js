@@ -31,17 +31,26 @@ var $digGoto = (function(){
       + '</div>',
     $dig = $(html),
     cfg = {
-        container:'body',
-        num:6,
-        title:'同意',
-        onClick:null 
-      };
+        container:'body' 
+    };
+  var $close = $dig.find('.close-btn'),
+      $cancel = $dig.find('.btn-cancel'),
+      $btngo = $dig.find('.btn-goto'),
+      $txt = $dig.find('.txt-line-num');
+  function clo(){$dig.remove()};
   function show(conf){
     // 1.DOM draw
     $(conf.container).append($dig);
     $.extend(cfg,conf); 
     // 2.event 绑定
-    $dig.click(cfg.onClick);
+    //$dig.click(cfg.onClick);
+    $dig.draggable();
+    $close.click(clo);
+    $cancel.click(clo); 
+    $btngo.click(function(){
+      console.log('转到'+$txt.val()+'行');
+      clo();
+    });
   }
   return {
     show: show
